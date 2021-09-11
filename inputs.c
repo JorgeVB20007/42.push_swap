@@ -104,9 +104,16 @@ t_towers	organizestruct(int agc, char **agv)
 {
 	char		*str;
 	t_towers	tower;
+	long		len;
 
+	len = 0;
+	if (agc < 2)
+		errmsg('g');
 	str = joinparams(agc, agv);
-	tower = reservememory(countandcheckbs(str, 0));
+	len = countandcheckbs(str, 0);
+	if (!len)
+		errmsg('h');
+	tower = reservememory(len);
 	tower = chartolong(tower, str);
 	checkfordupes(tower.a, tower.size);
 	return (tower);

@@ -8,11 +8,15 @@ void	errmsg(char a)
 	exit(0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_towers	tower;
 
 	tower = organizestruct(argc, argv);
+	if (checkorder(tower.a, tower.size))
+		return (0);
+	docorrectorder(tower.a, &tower.corr, tower.size);
 	printcolumns(tower);
+	manualcontrol(&tower);
 	return (0);
 }

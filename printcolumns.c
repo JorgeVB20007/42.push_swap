@@ -14,8 +14,8 @@ void	printcolumns(t_towers tower)
 	printf("|–––––––––––––––|–––––––––––––––|   |–––––––––––––––|\n");
 	printf("| %8ld      | %8ld      |   | %8ld      |\n", tower.soa, tower.sob, tower.size);
 	printf(" ––––––––––––––– –––––––––––––––     –––––––––––––––\n");
-/*	if (checkorder(tower))
+	if (checkorder(tower.a, tower.size))
 		printf("      THE LIST IS SORTED!\n");
 	else
-		printf("     THE LIST'S NOT SORTED\n");*/
+		printf("     THE LIST'S NOT SORTED\n");
 }
