@@ -29,7 +29,9 @@ void		sx(long **list, long size);
 void		px(long **dep, long **arr, long size);
 void		rx(long **list, long size);
 void		rrx(long **list, long size);
+t_towers	chunksort(t_towers tower);
 void		printcolumns(t_towers tower);		// Delete before evaluation
 void		manualcontrol(t_towers *tower);
+char		*randomgen(void);
 
 #endif

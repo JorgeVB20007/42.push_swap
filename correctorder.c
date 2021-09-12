@@ -30,6 +30,8 @@ int	checkorder(long *a, long size)
 	long	b;
 
 	b = 1;
+	if (a[size - 1] == MT)
+		return (0);
 	while (b < size)
 	{
 		if (a[b] < a[b - 1])

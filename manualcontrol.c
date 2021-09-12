@@ -4,6 +4,7 @@ void	manualcontrol(t_towers *tower)
 {
 	char	*line;
 
+	printf("\n  ~~~~~~~~~~ MANUAL CONTROL IS ON ~~~~~~~~~~\n");
 	while (1)
 	{
 		get_next_line(0, &line);
