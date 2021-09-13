@@ -1,10 +1,9 @@
 #include <time.h>
 #include "push_swap.h"
 
-char *randomgen(void)
+char *randomgen(int a)
 {
 	char *str;
-	int a = 99;
 
 	str = malloc(2);
 	str[0] = ' ';
@@ -13,6 +12,8 @@ char *randomgen(void)
 	while (a)
 	{
 		str = ft_strjoin(str, " ");
+		if (rand() % 2)
+			str = ft_strjoin(str, "-");
 		str = ft_strjoin(str, ft_itoa(rand()));
 		a--;
 	}

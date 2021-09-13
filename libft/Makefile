@@ -64,10 +64,8 @@ CFLAGS = -Wall -Werror -Wextra
 all:		${NAME}
 ${NAME}:	${OBJS}
 			ar rc ${NAME} ${OBJS}
-			ranlib ${NAME}
 bonus:		${OBJS} ${OBJSB}
 			ar rc ${NAME} ${OBJS} ${OBJSB}
-			ranlib ${NAME}
 clean:
 	@${RM} ${OBJS} ${OBJSB}
 fclean:		clean

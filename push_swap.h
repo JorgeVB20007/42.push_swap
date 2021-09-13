@@ -5,9 +5,10 @@
 # include "gnl/get_next_line.h"
 # include <stdio.h>
 # include <string.h>
+# include <time.h>
 
 # define MT	99999999999
-# define DIV 30
+# define DIV 80
 
 typedef struct s_towers
 {
@@ -17,6 +18,8 @@ typedef struct s_towers
 	long	size;
 	long	soa;
 	long	sob;
+	char	*log;
+	long	div;
 }					t_towers;
 
 int			main(int argc, char **argv);
@@ -30,8 +33,12 @@ void		px(long **dep, long **arr, long size);
 void		rx(long **list, long size);
 void		rrx(long **list, long size);
 t_towers	chunksort(t_towers tower);
+void		addlog(char **log, char *a);
+void		printlog(char *log);
+void		improvelog(char **log);
 void		printcolumns(t_towers tower);		// Delete before evaluation
 void		manualcontrol(t_towers *tower);
-char		*randomgen(void);
+char		*randomgen(int a);
+int			countlog(char *log);
 
 #endif
