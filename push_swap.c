@@ -2,56 +2,24 @@
 
 void	errmsg(char a)
 {
-	a = 0;
+	//a = 0;
 	write(1, "Error ", 6);
-//	write(1, &a, 1);
+	write(1, &a, 1);
 	write(1, "\n", 1);
 	exit(0);
+}
+
+void	freestuff(t_towers *tower)
+{
+	free((*tower).a);
+	free((*tower).b);
+	free((*tower).corr);
+	free((*tower).log);
 }
 
 int	main(int argc, char **argv)
 {
 	t_towers	tower;
-//	char		**ran;
-//	long		count = 200;
-//	long		attempts = 250;
-//	int			wait = 100;
-
-/*	if (argv)
-		printf("\n");
-	ran = malloc(2);
-	ran[0] = malloc(2);
-	ran[0][0] = 'a';
-	ran[0][1] = 0;
-	while (count > 2)
-	{
-		write(1, "\n", 1);
-//		ft_putnbr_fd(count, 0);
-//		write(1, ": ", 2);
-		attempts = 15;
-		wait = 2000000;
-		while (wait--)
-			write(1, ".", 0);
-		ran[1] = randomgen(5);
-		while (attempts > 0)
-		{
-			tower = organizestruct(argc, ran);
-			tower.div = attempts;
-			docorrectorder(tower.a, &tower.corr, tower.size);
-			tower = chunksort(tower);
-			improvelog(&tower.log);
-			ft_putnbr_fd(countlog(tower.log), 0);
-			write(1, "\t", 1);
-			free(tower.a);
-			free(tower.b);
-			free(tower.corr);
-			free(tower.log);
-			attempts -= 1;
-		}
-		count -= 1;
-	}*/
-
-//	ran[1] = randomgen(100);
 
 	tower = organizestruct(argc, argv);
 	if (checkorder(tower.a, tower.size))
@@ -63,11 +31,15 @@ int	main(int argc, char **argv)
 		tower.log = threenums(tower.a);
 	else if (tower.size == 5)
 		tower = fivenums(tower);
+	else if (tower.size > 100 && tower.size <= 500)
+		tower.div = 90;
+	else if (tower.size > 50 && tower.size <= 100)
+		tower.div = 40;
 	else
+		tower = bubblesort(tower);
+	if (tower.div != 0)
 		tower = chunksort(tower);
 	improvelog(&tower.log);
 	printlog(tower.log);
-
-//	manualcontrol(&tower);
 	return (0);
 }

@@ -86,3 +86,32 @@ t_towers	fivenums(t_towers tower)
 		addlog(&tower.log, "rara");
 	return (tower);
 }
+
+t_towers	bubblesort(t_towers tower)
+{
+	long	a;
+	long	b;
+	long	loc;
+
+	a = tower.size;
+	b = tower.size;
+	while (a)
+	{
+		loc = tower.size;
+		while (loc - 1)
+		{
+			if (tower.a[0] > tower.a[1])
+			{
+				sx(&tower.a, tower.size);
+				addlog(&tower.log, "sa");
+			}
+			rx(&tower.a, tower.size);
+			addlog(&tower.log, "ra");
+			loc--;
+		}
+		rx(&tower.a, tower.size);
+		addlog(&tower.log, "ra");
+		a--;
+	}
+	return (tower);
+}

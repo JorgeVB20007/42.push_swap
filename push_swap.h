@@ -2,13 +2,10 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "gnl/get_next_line.h"
 # include <stdio.h>
 # include <string.h>
-# include <time.h>
 
 # define MT	99999999999
-# define DIV 80
 
 typedef struct s_towers
 {
@@ -42,6 +39,7 @@ char		*randomgen(int a);
 int			countlog(char *log);
 char		*twonums(long *list);
 char		*threenums(long *list);
+t_towers	bubblesort(t_towers tower);
 t_towers	fivenums(t_towers tower);
 
 #endif

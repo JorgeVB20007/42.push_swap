@@ -116,5 +116,7 @@ t_towers	organizestruct(int agc, char **agv)
 	tower = reservememory(len);
 	tower = chartolong(tower, str);
 	checkfordupes(tower.a, tower.size);
+	tower.div = 0;
+	free (str);
 	return (tower);
 }
