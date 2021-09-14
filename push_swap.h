@@ -40,5 +40,8 @@ void		printcolumns(t_towers tower);		// Delete before evaluation
 void		manualcontrol(t_towers *tower);
 char		*randomgen(int a);
 int			countlog(char *log);
+char		*twonums(long *list);
+char		*threenums(long *list);
+t_towers	fivenums(t_towers tower);
 
 #endif

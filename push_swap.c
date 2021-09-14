@@ -12,12 +12,12 @@ void	errmsg(char a)
 int	main(int argc, char **argv)
 {
 	t_towers	tower;
-	char		**ran;
-	long		count = 200;
-	long		attempts = 250;
-	int			wait = 100;
+//	char		**ran;
+//	long		count = 200;
+//	long		attempts = 250;
+//	int			wait = 100;
 
-	if (argv)
+/*	if (argv)
 		printf("\n");
 	ran = malloc(2);
 	ran[0] = malloc(2);
@@ -28,12 +28,12 @@ int	main(int argc, char **argv)
 		write(1, "\n", 1);
 //		ft_putnbr_fd(count, 0);
 //		write(1, ": ", 2);
-		attempts = 250;
+		attempts = 15;
 		wait = 2000000;
 		while (wait--)
 			write(1, ".", 0);
-		ran[1] = randomgen(500);
-		while (attempts > 15)
+		ran[1] = randomgen(5);
+		while (attempts > 0)
 		{
 			tower = organizestruct(argc, ran);
 			tower.div = attempts;
@@ -46,21 +46,28 @@ int	main(int argc, char **argv)
 			free(tower.b);
 			free(tower.corr);
 			free(tower.log);
-			attempts -= 5;
+			attempts -= 1;
 		}
 		count -= 1;
-	}
-/*
-	ran[1] = randomgen(100);
+	}*/
+
+//	ran[1] = randomgen(100);
 
 	tower = organizestruct(argc, argv);
 	if (checkorder(tower.a, tower.size))
 		return (0);
 	docorrectorder(tower.a, &tower.corr, tower.size);
-	tower = chunksort(tower);
+	if (tower.size == 2)
+		tower.log = twonums(tower.a);
+	else if (tower.size == 3)
+		tower.log = threenums(tower.a);
+	else if (tower.size == 5)
+		tower = fivenums(tower);
+	else
+		tower = chunksort(tower);
 	improvelog(&tower.log);
 	printlog(tower.log);
 
-//	manualcontrol(&tower);*/
+//	manualcontrol(&tower);
 	return (0);
 }

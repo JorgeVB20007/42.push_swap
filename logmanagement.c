@@ -54,7 +54,7 @@ void	improvelog(char **log)
 					break ;
 				else
 				{
-					(*log)[a + 1] = (*log)[a + 1];
+					(*log)[a + 1] = (*log)[a];
 					(*log)[b] = ' ';
 					(*log)[b + 1] = ' ';
 				}
