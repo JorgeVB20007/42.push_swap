@@ -14,9 +14,8 @@
 
 void	errmsg(char a)
 {
-	//a = 0;
+	a = 0;
 	write(1, "Error ", 6);
-	write(1, &a, 1);
 	write(1, "\n", 1);
 	exit(0);
 }

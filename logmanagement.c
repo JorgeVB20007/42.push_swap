@@ -42,6 +42,23 @@ void	printlog(char *log)
 	}
 }
 
+static int	improvelogtwo(char **log, long *a, long *b)
+{
+	if ((*log)[*b] == 'p' || (*log)[*b + 1] == 's' || (*log)[*b + 1] == 'r')
+		return (0);
+	else if ((*log)[*b + 1] == (*log)[*a + 1])
+		*b += 2;
+	else if ((*log)[*b] != (*log)[*a])
+		return (0);
+	else
+	{
+		(*log)[*a + 1] = (*log)[*a];
+		(*log)[*b] = ' ';
+		(*log)[*b + 1] = ' ';
+	}
+	return (1);
+}
+
 void	improvelog(char **log)
 {
 	long	a;
@@ -58,18 +75,8 @@ void	improvelog(char **log)
 			b = a + 2;
 			while ((*log)[b])
 			{
-				if ((*log)[b] == 'p' || (*log)[b + 1] == 's' || (*log)[b + 1] == 'r')
+				if (!improvelogtwo(log, &a, &b))
 					break ;
-				else if ((*log)[b + 1] == (*log)[a + 1])
-					b += 2;
-				else if ((*log)[b] != (*log)[a])
-					break ;
-				else
-				{
-					(*log)[a + 1] = (*log)[a];
-					(*log)[b] = ' ';
-					(*log)[b + 1] = ' ';
-				}
 			}
 		}
 		a += 2;

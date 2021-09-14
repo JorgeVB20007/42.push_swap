@@ -53,5 +53,7 @@ char		*twonums(long *list);
 char		*threenums(long *list);
 t_towers	bubblesort(t_towers tower);
 t_towers	fivenums(t_towers tower);
+void		slideup(long **list, long size);
+void		slidedwn(long **list, long size);
 
 #endif
