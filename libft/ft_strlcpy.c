@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	calcreturn(const char	*src)
+static size_t	calcreturn(const char	*src)
 {
 	size_t	c;
 

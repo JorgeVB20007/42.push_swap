@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned char	*fcalc(unsigned char *f, const unsigned char *g, size_t n)
+static unsigned char	*fc(unsigned char *f, const unsigned char *g, size_t n)
 {
 	size_t	a;
 
@@ -46,5 +46,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	g = src;
 	if (dest == NULL && src == NULL)
 		return (NULL);
-	return (fcalc(f, g, n));
+	return (fc(f, g, n));
 }

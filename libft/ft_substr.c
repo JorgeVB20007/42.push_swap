@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*secondpartjvb(char *t, char const *s, unsigned int start, int max)
+static char	*secondpartjvb(char *t, char const *s, unsigned int start, int max)
 {
 	int	r;
 

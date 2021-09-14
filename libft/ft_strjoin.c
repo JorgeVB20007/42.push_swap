@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	secondpartjvc(char const *s1, char *ns)
+static int	secondpartjvc(char const *s1, char *ns)
 {
 	int	c1;
 
@@ -25,7 +25,7 @@ int	secondpartjvc(char const *s1, char *ns)
 	return (c1);
 }
 
-char	*mpty_strngs_mngmnt(const char *s1, const char *s2)
+static char	*mpty_strngs_mngmnt(const char *s1, const char *s2)
 {
 	char		*rslt;
 	int			a;

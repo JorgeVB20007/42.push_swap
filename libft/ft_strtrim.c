@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	beggining(char const *s1, char const *set)
+static int	beggining(char const *s1, char const *set)
 {
 	int	a;
 	int	b;
@@ -37,7 +37,7 @@ int	beggining(char const *s1, char const *set)
 	return (-1);
 }
 
-int	ending(char const *s1, char const *set, int size)
+static int	ending(char const *s1, char const *set, int size)
 {
 	int	a;
 	int	b;
@@ -62,7 +62,7 @@ int	ending(char const *s1, char const *set, int size)
 	return (a + 1);
 }
 
-char	*strtrimproblemchecker(int a)
+static char	*strtrimproblemchecker(int a)
 {
 	char	*result;
 

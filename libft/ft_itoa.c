@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*minnumber(int n)
+static char	*minnumber(int n)
 {
 	char	*a;
 
@@ -41,7 +41,7 @@ char	*minnumber(int n)
 	return (a);
 }
 
-int	checklong(int n)
+static int	checklong(int n)
 {
 	int	p;
 

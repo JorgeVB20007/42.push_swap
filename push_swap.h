@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvacaris <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/14 23:37:23 by jvacaris          #+#    #+#             */
+/*   Updated: 2021/09/14 23:37:25 by jvacaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -33,9 +45,9 @@ t_towers	chunksort(t_towers tower);
 void		addlog(char **log, char *a);
 void		printlog(char *log);
 void		improvelog(char **log);
-void		printcolumns(t_towers tower);		// Delete before evaluation
-void		manualcontrol(t_towers *tower);
-char		*randomgen(int a);
+//void		printcolumns(t_towers tower);		// Delete before evaluation
+//void		manualcontrol(t_towers *tower);
+//char		*randomgen(int a);
 int			countlog(char *log);
 char		*twonums(long *list);
 char		*threenums(long *list);

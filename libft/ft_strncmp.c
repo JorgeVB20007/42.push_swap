@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	finalreturning(const char *s1, const char *s2, size_t m, size_t n)
+static int	finalreturning(const char *s1, const char *s2, size_t m, size_t n)
 {
 	if (m == n)
 		return (0);

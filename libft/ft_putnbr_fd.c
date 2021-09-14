@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	secondpart(ceros, n, inv, fd)
+static void	secondpart(ceros, n, inv, fd)
 {
 	char	c;
 
@@ -40,7 +40,7 @@ void	secondpart(ceros, n, inv, fd)
 	}
 }
 
-void	singledigits(n, fd)
+static void	singledigits(n, fd)
 {
 	char	c;
 

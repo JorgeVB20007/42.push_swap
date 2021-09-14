@@ -1,15 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jvacaris <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/09/14 23:35:02 by jvacaris          #+#    #+#              #
+#    Updated: 2021/09/14 23:35:05 by jvacaris         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS	=	push_swap.c \
 			chunksort.c \
 			commands.c	\
 			correctorder.c	\
+			fewnums.c	\
 			inputs.c	\
 			joinparams.c	\
-			manualcontrol.c	\
-			printcolumns.c	\
-			random_gen.c	\
+			logmanagement.c	\
 
 OBJS = ${SRCS:.c=.o}
-NAME = push_swap.a
+NAME = push_swap
 LIBFT = libft.a
 CC = gcc
 RM = rm -f
@@ -21,7 +32,7 @@ ${NAME}:	${OBJS} ${LIBFT}
 ${LIBFT}:	
 			make -C ./libft/ libft.a
 clean:
-	@${RM} ${OBJS}
+	@${RM} ${OBJS} libft/*.o
 fclean:		clean
-	@${RM} ${NAME}
+	@${RM} ${NAME} libft/${LIBFT} libft/*.o
 re:		fclean all

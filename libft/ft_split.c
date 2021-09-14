@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_rows(char const *s, char c)
+static int	count_rows(char const *s, char c)
 {
 	int	a;
 	int	h;
@@ -39,7 +39,7 @@ int	count_rows(char const *s, char c)
 		return (h + 2);
 }
 
-int	row_locator(char const *s, char c, int a, int b)
+static int	row_locator(char const *s, char c, int a, int b)
 {
 	int	d;
 
@@ -61,7 +61,7 @@ int	row_locator(char const *s, char c, int a, int b)
 	return (b);
 }
 
-char	*column_gen(char const *s, char c, int a)
+static char	*column_gen(char const *s, char c, int a)
 {
 	char	*result;
 	int		b;
@@ -87,7 +87,7 @@ char	*column_gen(char const *s, char c, int a)
 	return (result);
 }
 
-char	**split_error_mngmnt(char const *s, char c)
+static char	**split_error_mngmnt(char const *s, char c)
 {
 	int		a;
 	char	**result;
