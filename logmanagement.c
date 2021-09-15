@@ -14,9 +14,26 @@
 
 void	addlog(char **log, char *a)
 {
-	if (!*log)
-		*log = ft_calloc(1, 1);
-	*log = ft_strjoin(*log, a);
+	char	*newlog;
+	long	b;
+
+	b = 0;
+	if (!(*log))
+	{
+		(*log) = ft_strdup(a);
+		return ;
+	}
+	newlog = malloc(ft_strlen(*log) + 3);
+	while ((*log)[b])
+	{
+		newlog[b] = (*log)[b];
+		b++;
+	}
+	newlog[b++] = a[0];
+	newlog[b++] = a[1];
+	newlog[b] = 0;
+	free (*log);
+	*log = newlog;
 }
 
 void	printlog(char *log)

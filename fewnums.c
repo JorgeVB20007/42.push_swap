@@ -95,12 +95,15 @@ t_towers	fivenums(t_towers tower)
 	fivenumsifs(&tower, &a, &b);
 	px(&tower.a, &tower.b, 5);
 	addlog(&tower.log, "pb");
-	addlog(&tower.log, threenums(tower.a));
+	tower.log = ft_strjoin(tower.log, threenums(tower.a));
 	if (tower.b[0] < tower.b[1])
 		addlog(&tower.log, "sb");
-	addlog(&tower.log, "papa");
+	addlog(&tower.log, "pa");
+	addlog(&tower.log, "pa");
 	if (a == tower.corr[3])
-		addlog(&tower.log, "rara");
+		addlog(&tower.log, "ra");
+	if (a == tower.corr[3])
+		addlog(&tower.log, "ra");
 	return (tower);
 }
 

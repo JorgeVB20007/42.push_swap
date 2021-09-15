@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-long	countandcheckbs(char *str, long n)
+static long	countandcheckbs(char *str, long n)
 {
 	long		a;
 
@@ -39,7 +39,7 @@ long	countandcheckbs(char *str, long n)
 	return (n);
 }
 
-t_towers	reservememory(long n)
+static t_towers	reservememory(long n)
 {
 	long		a;
 	t_towers	tower;
@@ -61,7 +61,7 @@ t_towers	reservememory(long n)
 	return (tower);
 }
 
-t_towers	chartolong(t_towers tower, char *str, long index)
+static t_towers	chartolong(t_towers tower, char *str, long index)
 {
 	long	n;
 	int		a;
@@ -125,6 +125,7 @@ t_towers	organizestruct(int agc, char **agv)
 	tower = reservememory(len);
 	tower = chartolong(tower, str, 0);
 	checkfordupes(tower.a, tower.size);
+	tower.log = NULL;
 	tower.div = 0;
 	free (str);
 	return (tower);

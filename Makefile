@@ -27,11 +27,11 @@ LIBFT = libft.a
 LIBFT_PATH = ./libft/
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
 
 all:		${NAME}
 ${NAME}:	${OBJS} ${LIBFT}
-			${CC} ${CFLAGS} ${LIBFT_PATH}${LIBFT} ${OBJS} -o ${NAME} 
+			${CC} ${CFLAGS} ${LIBFT_PATH}${LIBFT} ${OBJS} -o ${NAME}
 ${LIBFT}:	
 			make -C ${LIBFT_PATH}
 clean:

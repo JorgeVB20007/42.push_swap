@@ -71,5 +71,6 @@ int	main(int argc, char **argv)
 	improvelog(&tower.log);
 	printlog(tower.log);
 	freestuff(&tower);
+	system("leaks push_swap");
 	return (0);
 }

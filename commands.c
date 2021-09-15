@@ -59,8 +59,10 @@ void	rrx(long **list, long size)
 	a = 0;
 	if (size >= 2)
 	{
-		while (list[0][a + 1] != MT && a + 1 < size)
+		while (a + 1 < size && (*list)[a] != MT)
 			a++;
+		if ((*list)[a] == MT)
+			a--;
 		aux = list[0][a];
 		list[0][a] = MT;
 		slidedwn(list, size);

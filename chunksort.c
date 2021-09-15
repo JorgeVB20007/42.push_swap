@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	numsinrange(long *list, long sol, long max, long min)
+static int	numsinrange(long *list, long sol, long max, long min)
 {
 	long	a;
 
@@ -26,7 +26,7 @@ int	numsinrange(long *list, long sol, long max, long min)
 	return (0);
 }
 
-t_towers	movetob(t_towers tower, long min, long max)
+static t_towers	movetob(t_towers tower, long min, long max)
 {
 	while (numsinrange(tower.a, tower.size, max, min))
 	{
