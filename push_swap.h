@@ -44,9 +44,6 @@ t_towers	returntoa(t_towers	tower, long *min, long *max);
 void		addlog(char **log, char *a);
 void		printlog(char *log);
 void		improvelog(char **log);
-//void		printcolumns(t_towers tower);		// Delete before evaluation
-//void		manualcontrol(t_towers *tower);
-//char		*randomgen(int a);
 int			countlog(char *log);
 char		*twonums(long *list);
 char		*threenums(long *list);
