@@ -12,6 +12,7 @@
 
 SRCS	=	push_swap.c \
 			chunksort.c \
+			chunksort_returntoa.c	\
 			commands.c	\
 			commands_slide.c	\
 			correctorder.c	\

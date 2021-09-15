@@ -20,12 +20,32 @@ void	errmsg(char a)
 	exit(0);
 }
 
-void	freestuff(t_towers *tower)
+static void	freestuff(t_towers *tower)
 {
 	free((*tower).a);
 	free((*tower).b);
 	free((*tower).corr);
 	free((*tower).log);
+}
+
+static int	divmorecases(long size)
+{
+	if (size > 2000)
+		return (500);
+	else if (size > 1000 && size <= 2000)
+		return (250);
+	else if (size > 550 && size <= 1000)
+		return (150);
+	else if (size > 300 && size <= 550)
+		return (90);
+	else if (size > 100 && size <= 300)
+		return (70);
+	else if (size >= 50 && size <= 100)
+		return (40);
+	else if (size >= 30 && size < 50)
+		return (20);
+	else
+		return (10);
 }
 
 int	main(int argc, char **argv)
@@ -42,15 +62,14 @@ int	main(int argc, char **argv)
 		tower.log = threenums(tower.a);
 	else if (tower.size == 5)
 		tower = fivenums(tower);
-	else if (tower.size > 100 && tower.size <= 500)
-		tower.div = 90;
-	else if (tower.size > 50 && tower.size <= 100)
-		tower.div = 40;
-	else
+	else if (tower.size < 20)
 		tower = bubblesort(tower);
+	else
+		tower.div = divmorecases(tower.size);
 	if (tower.div != 0)
 		tower = chunksort(tower);
 	improvelog(&tower.log);
 	printlog(tower.log);
+	freestuff(&tower);
 	return (0);
 }

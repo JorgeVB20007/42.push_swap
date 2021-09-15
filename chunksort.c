@@ -26,57 +26,6 @@ int	numsinrange(long *list, long sol, long max, long min)
 	return (0);
 }
 
-t_towers	returntoa(t_towers	tower, long *min, long *max)
-{
-	long	a;
-	long	b;
-	int		dir;
-
-	b = 0;
-	while (tower.b[b] != MT)
-		b++;
-	b--;
-	while (tower.b[0] != MT)
-	{
-		a = -1;
-		dir = 0;
-		while (!dir)
-		{
-			a++;
-			if (tower.b[a] == *min || tower.b[a] == *max)
-				dir = -1;
-			else if (tower.b[b - a] == *min || tower.b[b - a] == *max)
-			{
-				a++;
-				dir = 1;
-			}
-		}
-		while (a-- > 0)
-		{
-			if (dir == -1)
-				rx(&(tower.b), tower.size);
-			else
-				rrx(&(tower.b), tower.size);
-			if (dir == -1)
-				addlog(&tower.log, "rb");
-			else
-				addlog(&tower.log, "Rb");
-		}
-		px(&(tower.b), &(tower.a), tower.size);
-		addlog(&tower.log, "pa");
-		if (tower.a[0] == *max)
-			max--;
-		else
-		{
-			rx(&(tower.a), tower.size);
-			addlog(&tower.log, "ra");
-			min++;
-		}
-		b--;
-	}
-	return (tower);
-}
-
 t_towers	movetob(t_towers tower, long min, long max)
 {
 	while (numsinrange(tower.a, tower.size, max, min))

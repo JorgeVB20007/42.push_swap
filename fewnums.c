@@ -49,34 +49,33 @@ char	*threenums(long *list)
 	return (log);
 }
 
-static t_towers	fivenumsifs(t_towers tower, long *a, long *b)
+static void	fivenumsifs(t_towers *tower, long *a, long *b)
 {
-	if (tower.b[0] == tower.corr[0] || tower.b[0] == tower.corr[1])
+	if ((*tower).b[0] == (*tower).corr[0] || (*tower).b[0] == (*tower).corr[1])
 	{
-		*a = tower.corr[0];
-		*b = tower.corr[1];
+		*a = (*tower).corr[0];
+		*b = (*tower).corr[1];
 	}
-	if (tower.b[0] == tower.corr[3] || tower.b[0] == tower.corr[4])
+	if ((*tower).b[0] == (*tower).corr[3] || (*tower).b[0] == (*tower).corr[4])
 	{
-		*a = tower.corr[3];
-		*b = tower.corr[4];
+		*a = (*tower).corr[3];
+		*b = (*tower).corr[4];
 	}
-	if (tower.a[3] == *a || tower.a[3] == *b)
+	if ((*tower).a[3] == *a || (*tower).a[3] == *b)
 	{
-		rrx(&tower.a, 5);
-		addlog(&tower.log, "Ra");
+		rrx(&(*tower).a, 5);
+		addlog(&(*tower).log, "Ra");
 	}
-	else if (tower.a[2] == *a || tower.a[2] == *b)
+	else if ((*tower).a[2] == *a || (*tower).a[2] == *b)
 	{
-		rx(&tower.a, 5);
-		addlog(&tower.log, "ra");
+		rx(&(*tower).a, 5);
+		addlog(&(*tower).log, "ra");
 	}
-	if (tower.a[1] == *a || tower.a[1] == *b)
+	if ((*tower).a[1] == *a || (*tower).a[1] == *b)
 	{
-		rx(&tower.a, 5);
-		addlog(&tower.log, "ra");
+		rx(&(*tower).a, 5);
+		addlog(&(*tower).log, "ra");
 	}
-	return (tower);
 }
 
 t_towers	fivenums(t_towers tower)
@@ -93,7 +92,7 @@ t_towers	fivenums(t_towers tower)
 	}
 	px(&tower.a, &tower.b, 5);
 	addlog(&tower.log, "pb");
-	tower = fivenumsifs(tower, &a, &b);
+	fivenumsifs(&tower, &a, &b);
 	px(&tower.a, &tower.b, 5);
 	addlog(&tower.log, "pb");
 	addlog(&tower.log, threenums(tower.a));

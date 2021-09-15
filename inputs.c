@@ -46,8 +46,6 @@ t_towers	reservememory(long n)
 
 	a = 0;
 	tower.size = n;
-	tower.soa = n;
-	tower.sob = 0;
 	tower.a = malloc(sizeof(long) * n);
 	tower.b = malloc(sizeof(long) * n);
 	tower.corr = malloc(sizeof(long) * n);
@@ -63,14 +61,12 @@ t_towers	reservememory(long n)
 	return (tower);
 }
 
-t_towers	chartolong(t_towers tower, char *str)
+t_towers	chartolong(t_towers tower, char *str, long index)
 {
 	long	n;
-	long	index;
 	int		a;
 	int		neg;
 
-	index = 0;
 	a = 0;
 	while (str[a])
 	{
@@ -80,12 +76,13 @@ t_towers	chartolong(t_towers tower, char *str)
 			a++;
 		if (str[a - 1] == '-')
 			neg = 1;
+		if (!str[a])
+			break ;
 		while (ft_isdigit(str[a]))
 		{
-			n = n * 10 + str[a] - '0';
+			n = n * 10 + str[a++] - '0';
 			if (n > (long)2147483647 + (long)neg)
 				errmsg('c');
-			a++;
 		}
 		tower.a[index++] = n * ((neg * -2) + 1);
 	}
@@ -126,7 +123,7 @@ t_towers	organizestruct(int agc, char **agv)
 	if (!len)
 		errmsg('h');
 	tower = reservememory(len);
-	tower = chartolong(tower, str);
+	tower = chartolong(tower, str, 0);
 	checkfordupes(tower.a, tower.size);
 	tower.div = 0;
 	free (str);

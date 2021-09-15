@@ -25,8 +25,6 @@ typedef struct s_towers
 	long	*b;
 	long	*corr;
 	long	size;
-	long	soa;
-	long	sob;
 	char	*log;
 	long	div;
 }					t_towers;
@@ -42,6 +40,7 @@ void		px(long **dep, long **arr, long size);
 void		rx(long **list, long size);
 void		rrx(long **list, long size);
 t_towers	chunksort(t_towers tower);
+t_towers	returntoa(t_towers	tower, long *min, long *max);
 void		addlog(char **log, char *a);
 void		printlog(char *log);
 void		improvelog(char **log);
