@@ -27,7 +27,7 @@ LIBFT = libft.a
 LIBFT_PATH = ./libft/
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra #-g3 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 
 all:		${NAME}
 ${NAME}:	${OBJS} ${LIBFT}
