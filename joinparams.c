@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-char	*joinstr(char *frst, char *scnd)
+static char	*joinstr(char *frst, char *scnd)
 {
 	char	*res;
 	int		len;
