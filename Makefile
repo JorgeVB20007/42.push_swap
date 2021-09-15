@@ -13,6 +13,7 @@
 SRCS	=	push_swap.c \
 			chunksort.c \
 			commands.c	\
+			commands_slide.c	\
 			correctorder.c	\
 			fewnums.c	\
 			inputs.c	\
@@ -22,17 +23,22 @@ SRCS	=	push_swap.c \
 OBJS = ${SRCS:.c=.o}
 NAME = push_swap
 LIBFT = libft.a
+LIBFT_PATH = ./libft/
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra
 
 all:		${NAME}
 ${NAME}:	${OBJS} ${LIBFT}
-			ar rc ${NAME} ${OBJS}
+			${CC} ${CFLAGS} ${LIBFT_PATH}${LIBFT} ${OBJS} -o ${NAME} 
 ${LIBFT}:	
-			make -C ./libft/ libft.a
+			make -C ${LIBFT_PATH}
 clean:
-	@${RM} ${OBJS} libft/*.o
+	@${RM} ${OBJS}
+	@make clean -C ${LIBFT_PATH}
+	@echo ".o's are no more!"
 fclean:		clean
-	@${RM} ${NAME} libft/${LIBFT} libft/*.o
+	@${RM} ${NAME} libft/${LIBFT}
+	@echo "(including .a's)"
 re:		fclean all
+.PHONY: all clean fclean re
